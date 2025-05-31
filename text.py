@@ -3,7 +3,7 @@ import subprocess
 import os
 
 # Step 1: Split the audio using ffmpeg (30-second chunks)
-input_file = "output.wav"
+input_file = "system_audio_recording.wav"
 chunk_dir = "chunks"
 os.makedirs(chunk_dir, exist_ok=True)
 
@@ -31,5 +31,12 @@ for chunk in chunk_files:
     result = model.transcribe(chunk)
     full_transcription += result["text"] + " "
 
-# Step 3: Print the result
-print(full_transcription.strip())
+# Step 3: Print the result and save to file
+stripped_transcript = full_transcription.strip()
+print(stripped_transcript)
+
+# Save to text file
+with open("transcript.txt", "w", encoding="utf-8") as f:
+    f.write(stripped_transcript)
+
+

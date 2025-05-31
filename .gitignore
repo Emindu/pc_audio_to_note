@@ -12,3 +12,7 @@ chunks/
 *.wav
 *.m4a
 
+meeting_notes_*.md
+.env
+
+
