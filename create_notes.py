@@ -99,6 +99,14 @@ def main():
     response = send_to_perplexity(formatted_prompt)
     markdown_content = extract_answer(response)
     
+    source_input = input("Add source (optional): ")
+    if source_input.strip():
+        markdown_content += f"\n\n### Source: {source_input}"
+    else:
+        # If the input is empty or just whitespace, add a newline for spacing
+        markdown_content += "### Source:  \n"
+
+    
     if markdown_content != "No response received from API":
         # Save the markdown file
         save_markdown(markdown_content, output_filename)

@@ -5,11 +5,11 @@ source .venv/bin/activate
 # Configuration
 MINDMAP_REPO_PATH="/Users/eminduperera/dev/mindmap_repo"  # Change this to your desired path
 
-# # Record audio
-# python record.py
+# Record audio
+python record.py
 
-# # # Convert audio to text
-# python text.py
+# # Convert audio to text
+python text.py
 
 # Generate mindmap JSON and capture root node filename
 echo "Generating mindmap..."
@@ -366,6 +366,48 @@ create_date_index
 echo ""
 echo "================================================"
 echo "✅ Files saved to: $target_path"
+echo "================================================"
+echo ""
+
+# Git operations
+echo ""
+echo "📦 Git operations..."
+cd "$MINDMAP_REPO_PATH"
+
+# Check if it's a git repository
+if [ ! -d ".git" ]; then
+    echo "⚠️  Not a git repository. Initializing..."
+    git init
+    echo "✅ Git repository initialized"
+fi
+
+# Add all changes
+echo "Adding changes..."
+git add .
+
+# Create commit message
+commit_message="Add mindmap: $root_filename ($date_display)"
+
+# Commit changes
+echo "Committing changes..."
+if git commit -m "$commit_message"; then
+    echo "✅ Changes committed: $commit_message"
+    
+    # Push to remote (if configured)
+    echo "Pushing to remote..."
+    if git push 2>/dev/null; then
+        echo "✅ Changes pushed to remote"
+    else
+        echo "⚠️  Push failed. You may need to configure remote or push manually."
+        echo "💡 Run: cd $MINDMAP_REPO_PATH && git remote add origin <your-repo-url>"
+    fi
+else
+    echo "ℹ️  No changes to commit"
+fi
+
+echo ""
+echo "================================================"
+echo "✅ All operations complete!"
 echo "================================================"
 echo ""
 

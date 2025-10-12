@@ -1,8 +1,8 @@
-// Auto-generated from mindmap_20251012_163937.json
+// Auto-generated from mindmap_20251012_180211.json
 const mindmapData = [
   {
     "id": "root",
-    "text": "Effects of Forced Isolation",
+    "text": "Game Theory Overview",
     "parent": null,
     "level": 0,
     "position": {
@@ -12,8 +12,8 @@ const mindmapData = [
     "isCollapsed": false
   },
   {
-    "id": "psychological_effects",
-    "text": "Psychological Effects",
+    "id": "intro_scenario",
+    "text": "Dishes and Roommate Scenario",
     "parent": "root",
     "level": 1,
     "position": {
@@ -23,85 +23,19 @@ const mindmapData = [
     "isCollapsed": false
   },
   {
-    "id": "stress_response",
-    "text": "Stress Hormones & Chronic Stress",
-    "parent": "psychological_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 100
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "social_reality_testing",
-    "text": "Loss of Social Reality Testing",
-    "parent": "psychological_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 180
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "cognitive_impairment",
-    "text": "Cognitive & Brain Changes",
-    "parent": "psychological_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 260
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "emotional_imbalance",
-    "text": "Emotional Imbalance & Agitation",
-    "parent": "psychological_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 340
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "physical_effects",
-    "text": "Physical Health Effects",
+    "id": "prisoners_dilemma",
+    "text": "Prisoner's Dilemma Concept",
     "parent": "root",
     "level": 1,
     "position": {
       "x": 350,
-      "y": 400
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "sensory_and_sleep",
-    "text": "Sensory Issues & Sleep Problems",
-    "parent": "physical_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
       "y": 350
     },
     "isCollapsed": false
   },
   {
-    "id": "cardiovascular_and_digestive",
-    "text": "Cardiovascular & Digestive Issues",
-    "parent": "physical_effects",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 430
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "coping_strategies",
-    "text": "Coping Strategies",
+    "id": "game_theory_definition",
+    "text": "Game Theory Definition",
     "parent": "root",
     "level": 1,
     "position": {
@@ -111,145 +45,233 @@ const mindmapData = [
     "isCollapsed": false
   },
   {
-    "id": "healthy_routines",
-    "text": "Healthy Routines Under Stress",
-    "parent": "coping_strategies",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 520
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "limitations_of_coping",
-    "text": "Limitations of Coping Methods",
-    "parent": "coping_strategies",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 580
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "solitary_confinement",
-    "text": "Solitary Confinement Overview",
+    "id": "game_types",
+    "text": "Types of Games",
     "parent": "root",
     "level": 1,
     "position": {
-      "x": 350,
+      "x": 600,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "dominant_strategy",
+    "text": "Dominant Strategy Concept",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 600,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "real_life_complexity",
+    "text": "Real Life Complexity",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 600,
+      "y": 550
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "axelrod_tournament",
+    "text": "Axelrod's Tournament",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 850,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "tit_for_tat_strategy",
+    "text": "Tit for Tat Strategy",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 850,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "strategy_characteristics",
+    "text": "Strategy Characteristics",
+    "parent": "tit_for_tat_strategy",
+    "level": 2,
+    "position": {
+      "x": 1100,
+      "y": 300
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "tournament_results",
+    "text": "Tournament Results",
+    "parent": "axelrod_tournament",
+    "level": 2,
+    "position": {
+      "x": 1100,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "game_definition",
+    "text": "Definition of a Game",
+    "parent": "game_theory_definition",
+    "level": 2,
+    "position": {
+      "x": 600,
       "y": 700
     },
     "isCollapsed": false
   },
   {
-    "id": "definition_and_prevalence",
-    "text": "Definition & Prevalence",
-    "parent": "solitary_confinement",
+    "id": "cooperative_games",
+    "text": "Cooperative Games",
+    "parent": "game_types",
     "level": 2,
     "position": {
       "x": 600,
+      "y": 250
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "non_cooperative_games",
+    "text": "Non-Cooperative Games",
+    "parent": "game_types",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "golden_balls_example",
+    "text": "Golden Balls Game Show",
+    "parent": "dominant_strategy",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "strategy_implications",
+    "text": "Strategy Implications",
+    "parent": "dominant_strategy",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 550
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "tit_for_tat_mechanics",
+    "text": "Tit for Tat Mechanics",
+    "parent": "tit_for_tat_strategy",
+    "level": 2,
+    "position": {
+      "x": 1100,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "tit_for_tat_success_factors",
+    "text": "Success Factors of Tit for Tat",
+    "parent": "strategy_characteristics",
+    "level": 3,
+    "position": {
+      "x": 1350,
+      "y": 300
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "limitations_game_theory",
+    "text": "Limitations of Game Theory",
+    "parent": "real_life_complexity",
+    "level": 2,
+    "position": {
+      "x": 850,
+      "y": 600
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "human_factors",
+    "text": "Human Emotional Factors",
+    "parent": "limitations_game_theory",
+    "level": 3,
+    "position": {
+      "x": 1100,
       "y": 650
     },
     "isCollapsed": false
   },
   {
-    "id": "historical_context",
-    "text": "Historical Context",
-    "parent": "solitary_confinement",
+    "id": "cooperation_takeaway",
+    "text": "Cooperation Takeaway",
+    "parent": "tit_for_tat_strategy",
     "level": 2,
     "position": {
-      "x": 600,
-      "y": 710
+      "x": 1100,
+      "y": 500
     },
     "isCollapsed": false
   },
   {
-    "id": "criticism_and_legal",
-    "text": "Criticism & Legal Issues",
-    "parent": "solitary_confinement",
-    "level": 2,
+    "id": "moral_ethos",
+    "text": "Moral and Historical Ethos",
+    "parent": "strategy_characteristics",
+    "level": 3,
     "position": {
-      "x": 600,
-      "y": 770
+      "x": 1350,
+      "y": 350
     },
     "isCollapsed": false
   },
   {
-    "id": "mental_health_impact",
-    "text": "Mental Health Impact",
-    "parent": "solitary_confinement",
+    "id": "long_term_strategy",
+    "text": "Long Term Strategy Insights",
+    "parent": "real_life_complexity",
     "level": 2,
     "position": {
-      "x": 600,
-      "y": 830
+      "x": 850,
+      "y": 500
     },
     "isCollapsed": false
   },
   {
-    "id": "post_isolation_effects",
-    "text": "Post-Isolation Effects",
-    "parent": "solitary_confinement",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 890
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "regulations_and_loopholes",
-    "text": "Regulations & Loopholes",
-    "parent": "solitary_confinement",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 950
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "alternatives_and_rehabilitation",
-    "text": "Alternatives & Rehabilitation",
+    "id": "game_importance",
+    "text": "Games in Life and Learning",
     "parent": "root",
     "level": 1,
     "position": {
       "x": 350,
-      "y": 1050
+      "y": 750
     },
     "isCollapsed": false
   },
   {
-    "id": "international_comparison",
-    "text": "International Comparison",
-    "parent": "alternatives_and_rehabilitation",
+    "id": "gamification_learning",
+    "text": "Gamification in Learning",
+    "parent": "game_importance",
     "level": 2,
     "position": {
       "x": 600,
-      "y": 1020
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "recidivism_and_reintegration",
-    "text": "Recidivism & Reintegration",
-    "parent": "alternatives_and_rehabilitation",
-    "level": 2,
-    "position": {
-      "x": 600,
-      "y": 1080
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "cash_bail_issue",
-    "text": "Cash Bail System Issues",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 350,
-      "y": 1200
+      "y": 750
     },
     "isCollapsed": false
   }
