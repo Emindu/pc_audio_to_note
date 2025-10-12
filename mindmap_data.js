@@ -1,8 +1,8 @@
-// Auto-generated from mindmap_20251012_160908.json
+// Auto-generated from mindmap_20251012_162407.json
 const mindmapData = [
   {
     "id": "root",
-    "text": "Effects of Forced Solitude",
+    "text": "Effects of Forced Isolation",
     "parent": null,
     "level": 0,
     "position": {
@@ -12,398 +12,332 @@ const mindmapData = [
     "isCollapsed": false
   },
   {
-    "id": "psychological",
-    "text": "Psychological Impact",
+    "id": "psychological_effects",
+    "text": "Psychological Effects",
     "parent": "root",
     "level": 1,
     "position": {
-      "x": 300,
-      "y": 200
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "physical",
-    "text": "Physical Health Effects",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 300,
-      "y": 400
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "context",
-    "text": "Context and Prevalence",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 300,
-      "y": 600
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "coping",
-    "text": "Coping and Limitations",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 300,
-      "y": 800
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "stress",
-    "text": "Stress Hormone Spikes",
-    "parent": "psychological",
-    "level": 2,
-    "position": {
-      "x": 500,
+      "x": 350,
       "y": 150
     },
     "isCollapsed": false
   },
   {
-    "id": "identity",
-    "text": "Threat to Identity",
-    "parent": "psychological",
-    "level": 2,
+    "id": "physiological_effects",
+    "text": "Physiological Effects",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 500,
-      "y": 200
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "mood",
-    "text": "Depression and Anxiety",
-    "parent": "psychological",
-    "level": 2,
-    "position": {
-      "x": 500,
-      "y": 250
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "cognition",
-    "text": "Cognitive Impairment",
-    "parent": "psychological",
-    "level": 2,
-    "position": {
-      "x": 500,
-      "y": 300
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "sleep",
-    "text": "Sleep Disturbances",
-    "parent": "physical",
-    "level": 2,
-    "position": {
-      "x": 500,
-      "y": 350
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "symptoms",
-    "text": "Physical Symptoms",
-    "parent": "physical",
-    "level": 2,
-    "position": {
-      "x": 500,
-      "y": 400
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "appetite",
-    "text": "Weight Loss and Appetite",
-    "parent": "physical",
-    "level": 2,
-    "position": {
-      "x": 500,
+      "x": 350,
       "y": 450
     },
     "isCollapsed": false
   },
   {
-    "id": "history",
-    "text": "Historical Background",
-    "parent": "context",
+    "id": "social_reality_testing",
+    "text": "Social Reality Testing",
+    "parent": "psychological_effects",
     "level": 2,
     "position": {
-      "x": 500,
-      "y": 550
+      "x": 600,
+      "y": 100
     },
     "isCollapsed": false
   },
   {
-    "id": "prevalence",
-    "text": "Current Prevalence",
-    "parent": "context",
+    "id": "brain_changes",
+    "text": "Brain Changes",
+    "parent": "psychological_effects",
     "level": 2,
     "position": {
-      "x": 500,
+      "x": 600,
+      "y": 200
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "mental_health_symptoms",
+    "text": "Mental Health Symptoms",
+    "parent": "psychological_effects",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 300
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "stress_hormones",
+    "text": "Stress Hormones & Chronic Stress",
+    "parent": "psychological_effects",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "limbic_system",
+    "text": "Limbic System Hyperactivity",
+    "parent": "brain_changes",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 180
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "prefrontal_cortex",
+    "text": "Prefrontal Cortex Shrinkage",
+    "parent": "brain_changes",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 220
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "depression_obsessions",
+    "text": "Depression & Obsessions",
+    "parent": "mental_health_symptoms",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 280
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "delusions_hallucinations",
+    "text": "Delusions & Hallucinations",
+    "parent": "mental_health_symptoms",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 320
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "anxiety_rage",
+    "text": "Anxiety & Rage",
+    "parent": "mental_health_symptoms",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 360
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "time_sleep_issues",
+    "text": "Time Perception & Sleep Issues",
+    "parent": "physiological_effects",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "cardiovascular_symptoms",
+    "text": "Cardiovascular Symptoms",
+    "parent": "physiological_effects",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 500
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "digestive_issues",
+    "text": "Digestive Issues & Weight Loss",
+    "parent": "physiological_effects",
+    "level": 2,
+    "position": {
+      "x": 600,
       "y": 600
     },
     "isCollapsed": false
   },
   {
-    "id": "criticism",
-    "text": "Criticism and Reform",
-    "parent": "context",
+    "id": "coping_strategies",
+    "text": "Coping Strategies",
+    "parent": "physiological_effects",
     "level": 2,
     "position": {
-      "x": 500,
+      "x": 600,
+      "y": 700
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "forced_isolation_as_torture",
+    "text": "Forced Isolation as Torture",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 350,
+      "y": 600
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "solitary_confinement_practice",
+    "text": "Solitary Confinement Practice",
+    "parent": "forced_isolation_as_torture",
+    "level": 2,
+    "position": {
+      "x": 600,
+      "y": 550
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "historical_background",
+    "text": "Historical Background",
+    "parent": "solitary_confinement_practice",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 530
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "modern_usage",
+    "text": "Modern Usage & Criticism",
+    "parent": "solitary_confinement_practice",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 570
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "prevalence_us",
+    "text": "Prevalence in US Prisons",
+    "parent": "solitary_confinement_practice",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 610
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "mental_health_exacerbation",
+    "text": "Exacerbation of Mental Disorders",
+    "parent": "forced_isolation_as_torture",
+    "level": 2,
+    "position": {
+      "x": 600,
       "y": 650
     },
     "isCollapsed": false
   },
   {
-    "id": "routine",
-    "text": "Establishing Routine",
-    "parent": "coping",
+    "id": "long_term_effects",
+    "text": "Long-Term Effects",
+    "parent": "forced_isolation_as_torture",
     "level": 2,
     "position": {
-      "x": 500,
+      "x": 600,
+      "y": 700
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "post_traumatic_stress",
+    "text": "Post-Traumatic Stress Disorder",
+    "parent": "long_term_effects",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 680
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "personality_shifts",
+    "text": "Personality Shifts & Anxiety",
+    "parent": "long_term_effects",
+    "level": 3,
+    "position": {
+      "x": 850,
+      "y": 720
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "legal_restrictions",
+    "text": "Legal Restrictions & Loopholes",
+    "parent": "forced_isolation_as_torture",
+    "level": 2,
+    "position": {
+      "x": 600,
       "y": 750
     },
     "isCollapsed": false
   },
   {
-    "id": "limits",
-    "text": "Limits of Coping",
-    "parent": "coping",
+    "id": "rehabilitation_failure",
+    "text": "Failure to Reduce Violence",
+    "parent": "forced_isolation_as_torture",
     "level": 2,
     "position": {
-      "x": 500,
+      "x": 600,
       "y": 800
     },
     "isCollapsed": false
   },
   {
-    "id": "chronic",
-    "text": "Chronic Stress Development",
-    "parent": "stress",
-    "level": 3,
+    "id": "international_comparison",
+    "text": "International Comparison",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 700,
-      "y": 140
+      "x": 350,
+      "y": 900
     },
     "isCollapsed": false
   },
   {
-    "id": "reality",
-    "text": "Loss of Reality Testing",
-    "parent": "identity",
-    "level": 3,
+    "id": "norway_prison_system",
+    "text": "Norway Prison System",
+    "parent": "international_comparison",
+    "level": 2,
     "position": {
-      "x": 700,
-      "y": 190
+      "x": 600,
+      "y": 900
     },
     "isCollapsed": false
   },
   {
-    "id": "spiral",
-    "text": "Thought Spiral and Impulses",
-    "parent": "identity",
+    "id": "recidivism_rates",
+    "text": "Low Recidivism Rates",
+    "parent": "norway_prison_system",
     "level": 3,
     "position": {
-      "x": 700,
-      "y": 240
+      "x": 850,
+      "y": 900
     },
     "isCollapsed": false
   },
   {
-    "id": "suicidal",
-    "text": "Suicidal Ideation Risk",
-    "parent": "mood",
-    "level": 3,
+    "id": "cash_bail_issues",
+    "text": "Cash Bail System Issues",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 700,
-      "y": 290
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "delusions",
-    "text": "Delusions and Hallucinations",
-    "parent": "mood",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 340
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "limbic",
-    "text": "Limbic System Hyperactivity",
-    "parent": "cognition",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 390
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "prefrontal",
-    "text": "Prefrontal Cortex Atrophy",
-    "parent": "cognition",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 440
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "time",
-    "text": "Loss of Time Sense",
-    "parent": "sleep",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 490
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "cardiac",
-    "text": "Heart Palpitations",
-    "parent": "symptoms",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 540
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "sensory",
-    "text": "Sensory Hypersensitivity",
-    "parent": "symptoms",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 590
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "digestive",
-    "text": "Digestive Issues",
-    "parent": "appetite",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 640
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "quakers",
-    "text": "Quaker Origins",
-    "parent": "history",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 690
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "critics",
-    "text": "Early Critics",
-    "parent": "history",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 740
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "resurgence",
-    "text": "1980s Resurgence",
-    "parent": "history",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 790
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "numbers",
-    "text": "US Prisoner Statistics",
-    "parent": "prevalence",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 840
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "abuse",
-    "text": "Use for Minor Infractions",
-    "parent": "prevalence",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 890
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "ptsd",
-    "text": "PTSD and Personality Shifts",
-    "parent": "criticism",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 940
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "reform",
-    "text": "Legal Reforms and Limits",
-    "parent": "criticism",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 990
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "exercise",
-    "text": "Exercise and Mental Activity",
-    "parent": "routine",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 1040
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "torture",
-    "text": "Classification as Torture",
-    "parent": "limits",
-    "level": 3,
-    "position": {
-      "x": 700,
-      "y": 1090
+      "x": 350,
+      "y": 1000
     },
     "isCollapsed": false
   }
