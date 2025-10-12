@@ -1,0 +1,306 @@
+[
+  {
+    "id": "root",
+    "text": "Learning English Grammar Journey",
+    "parent": null,
+    "level": 0,
+    "position": { "x": 100, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "initial_fear",
+    "text": "Initial Fear and Confusion",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 350, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "school_experience",
+    "text": "School Grammar Experience",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 350, "y": 350 },
+    "isCollapsed": false
+  },
+  {
+    "id": "turning_point",
+    "text": "Turning Point and New Approach",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 350, "y": 550 },
+    "isCollapsed": false
+  },
+  {
+    "id": "practice_methods",
+    "text": "Practice Methods and Techniques",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 650, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "progress_and_results",
+    "text": "Progress and Results",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 650, "y": 350 },
+    "isCollapsed": false
+  },
+  {
+    "id": "parts_of_speech",
+    "text": "Parts of Speech Overview",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 650, "y": 550 },
+    "isCollapsed": false
+  },
+  {
+    "id": "fear_details",
+    "text": "Fear of Grammar Elements",
+    "parent": "initial_fear",
+    "level": 2,
+    "position": { "x": 550, "y": 100 },
+    "isCollapsed": false
+  },
+  {
+    "id": "emotional_response",
+    "text": "Emotional Responses",
+    "parent": "initial_fear",
+    "level": 2,
+    "position": { "x": 550, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "school_rules",
+    "text": "Hard Grammar Rules",
+    "parent": "school_experience",
+    "level": 2,
+    "position": { "x": 550, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "memorization_issue",
+    "text": "Memorization and Forgetting",
+    "parent": "school_experience",
+    "level": 2,
+    "position": { "x": 550, "y": 400 },
+    "isCollapsed": false
+  },
+  {
+    "id": "self_doubt",
+    "text": "Self-Doubt and Desire",
+    "parent": "school_experience",
+    "level": 2,
+    "position": { "x": 550, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "library_encounter",
+    "text": "Library Encounter",
+    "parent": "turning_point",
+    "level": 2,
+    "position": { "x": 550, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "playful_learning",
+    "text": "Playful Grammar Learning",
+    "parent": "turning_point",
+    "level": 2,
+    "position": { "x": 550, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "daily_writing",
+    "text": "Daily Writing Practice",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 100 },
+    "isCollapsed": false
+  },
+  {
+    "id": "real_life_connection",
+    "text": "Connecting Grammar to Life",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "self_talk",
+    "text": "Talking to Self in English",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "story_writing",
+    "text": "Writing Small Stories",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 400 },
+    "isCollapsed": false
+  },
+  {
+    "id": "embracing_mistakes",
+    "text": "Learning from Mistakes",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "small_steps",
+    "text": "One Small Step Daily",
+    "parent": "practice_methods",
+    "level": 2,
+    "position": { "x": 850, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "timeline_progress",
+    "text": "Timeline of Improvement",
+    "parent": "progress_and_results",
+    "level": 2,
+    "position": { "x": 850, "y": 350 },
+    "isCollapsed": false
+  },
+  {
+    "id": "confidence_gain",
+    "text": "Gaining Confidence",
+    "parent": "progress_and_results",
+    "level": 2,
+    "position": { "x": 850, "y": 450 },
+    "isCollapsed": false
+  },
+  {
+    "id": "grammar_friendship",
+    "text": "Grammar as Friend",
+    "parent": "progress_and_results",
+    "level": 2,
+    "position": { "x": 850, "y": 550 },
+    "isCollapsed": false
+  },
+  {
+    "id": "nouns",
+    "text": "Nouns",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 850, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "pronouns",
+    "text": "Pronouns",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 950, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "verbs",
+    "text": "Verbs",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 850, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "adjectives",
+    "text": "Adjectives",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 950, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "adverbs",
+    "text": "Adverbs",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 850, "y": 700 },
+    "isCollapsed": false
+  },
+  {
+    "id": "prepositions",
+    "text": "Prepositions",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 950, "y": 700 },
+    "isCollapsed": false
+  },
+  {
+    "id": "conjunctions",
+    "text": "Conjunctions",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 850, "y": 800 },
+    "isCollapsed": false
+  },
+  {
+    "id": "interjections",
+    "text": "Interjections",
+    "parent": "parts_of_speech",
+    "level": 2,
+    "position": { "x": 950, "y": 800 },
+    "isCollapsed": false
+  },
+  {
+    "id": "encouragement",
+    "text": "Encouragement and Advice",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 950, "y": 350 },
+    "isCollapsed": false
+  },
+  {
+    "id": "curiosity_over_perfection",
+    "text": "Curiosity Over Perfection",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "express_yourself",
+    "text": "Grammar for Expression",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 400 },
+    "isCollapsed": false
+  },
+  {
+    "id": "simple_sentences",
+    "text": "Use Simple Sentences",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "tenses_progression",
+    "text": "Tenses Progression",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "embrace_mistakes",
+    "text": "Embrace Mistakes",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 700 },
+    "isCollapsed": false
+  },
+  {
+    "id": "grammar_superpower",
+    "text": "Grammar as Superpower",
+    "parent": "encouragement",
+    "level": 2,
+    "position": { "x": 1150, "y": 800 },
+    "isCollapsed": false
+  }
+]

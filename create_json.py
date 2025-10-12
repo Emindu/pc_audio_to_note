@@ -174,6 +174,28 @@ def save_file(content, filename):
         print(f"❌ Error saving file {filename}: {e}")
         return False
 
+def save_as_js(json_content, json_filename):
+    """Save the JSON content as a JavaScript file."""
+    try:
+        # Parse and pretty-print the JSON
+        parsed_json = json.loads(json_content)
+        
+        # Create the JavaScript file content
+        js_content = f"// Auto-generated from {json_filename}\n"
+        js_content += "const mindmapData = "
+        js_content += json.dumps(parsed_json, indent=2, ensure_ascii=False)
+        js_content += ";\n"
+        
+        # Save to mindmap_data.js
+        js_filename = "mindmap_data.js"
+        with open(js_filename, 'w', encoding='utf-8') as f:
+            f.write(js_content)
+        
+        return True, js_filename
+    except Exception as e:
+        print(f"❌ Error saving JavaScript file: {e}")
+        return False, None
+
 def main():
     """Main function to run the transcript-to-mindmap process."""
     transcript_file = "transcript.txt"
@@ -212,6 +234,13 @@ def main():
     except IOError as e:
         print(f"\n❌ Failed to save final JSON file: {e}")
         return
+    
+    # Save as JavaScript file
+    success, js_filename = save_as_js(json_content, output_filename)
+    if success:
+        print(f"✅ JavaScript version saved to '{js_filename}'")
+    else:
+        print(f"⚠️  Warning: Failed to save JavaScript version")
         
     # Display summary
     print("\n📊 Mind Map Summary:")

@@ -23,7 +23,18 @@
             position: relative;
             width: 100%;
             height: 100%;
-            transform: scale(0.9); /* Zoom out slightly to fit */
+            overflow: hidden;
+            cursor: grab;
+        }
+        
+        #mindmap-container.grabbing {
+            cursor: grabbing;
+        }
+        
+        #mindmap-content {
+            position: absolute;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease-out;
         }
         
         /* --- SVG for Lines --- */
@@ -31,17 +42,19 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 5000px;
+            height: 5000px;
             z-index: 1; /* Behind nodes */
             pointer-events: none; /* Allows clicking through the SVG to nodes */
+            overflow: visible;
         }
         
         .line-path {
-            stroke: #5a5c6e;
-            stroke-width: 2px;
+            stroke: #7a7d9c;
+            stroke-width: 2.5px;
             fill: none;
             transition: opacity 0.3s ease;
+            opacity: 0.8;
         }
 
         /* --- Node Styling --- */
@@ -58,7 +71,8 @@
             font-size: 14px;
             font-weight: 600;
             z-index: 10;
-            min-width: 100px;
+            min-width: 120px;
+            max-width: 400px;
         }
         
         .node:hover {
@@ -69,6 +83,46 @@
         .node-text {
             flex-grow: 1;
             text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            line-height: 1.4;
+        }
+        
+        .node-text.single-line {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .node-text.multi-line {
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Tooltip for long text */
+        .node[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2a2b36;
+            color: #ececf1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: normal;
+            max-width: 300px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            pointer-events: none;
+            line-height: 1.4;
         }
         
         .node-arrow {
@@ -102,13 +156,57 @@
             background-color: #4a625a;
             border: 1px solid #627c73;
         }
+        
+        .node-level-3 {
+            background-color: #5a5a4a;
+            border: 1px solid #73736b;
+        }
+        
+        /* --- Zoom Controls --- */
+        #zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #4b4e5a;
+            border: 1px solid #636675;
+            border-radius: 8px;
+            color: #ececf1;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .zoom-btn:hover {
+            background-color: #5d5f7b;
+            transform: scale(1.1);
+        }
 
     </style>
 </head>
 <body>
 
     <div id="mindmap-container">
-        <svg id="mindmap-svg"></svg>
+        <div id="mindmap-content">
+            <svg id="mindmap-svg"></svg>
+        </div>
+    </div>
+    
+    <div id="zoom-controls">
+        <button class="zoom-btn" id="zoom-in" title="Zoom In">+</button>
+        <button class="zoom-btn" id="zoom-out" title="Zoom Out">−</button>
+        <button class="zoom-btn" id="zoom-reset" title="Reset View">⟲</button>
     </div>
 
     <!-- Load mindmap data from external JavaScript file -->
@@ -120,8 +218,35 @@
             // mindmapData is loaded from mindmap_data.js
 
             const mapContainer = document.getElementById('mindmap-container');
+            const mapContent = document.getElementById('mindmap-content');
             const svgContainer = document.getElementById('mindmap-svg');
+            
+            // --- CONFIGURATION ---
+            const TEXT_THRESHOLD = 35; // Characters before wrapping to multiple lines
+            const SHORT_TEXT_THRESHOLD = 20; // Characters for compact display
+            const DEFAULT_EXPANSION_LEVEL = 1; // Only expand up to this level by default
+            
+            // --- INITIALIZE DATA WITH DEFAULT COLLAPSED STATE ---
+            // Collapse all nodes at level 1 that have children (to hide level 2+)
+            mindmapData.forEach(node => {
+                if (node.level === DEFAULT_EXPANSION_LEVEL) {
+                    // Check if this level 1 node has any children
+                    const hasChildren = mindmapData.some(child => child.parent === node.id);
+                    if (hasChildren) {
+                        node.isCollapsed = true;
+                    }
+                }
+            });
+            
             const nodeMap = new Map(mindmapData.map(node => [node.id, node]));
+            
+            // --- PAN & ZOOM STATE ---
+            let scale = 1;
+            let translateX = 0;
+            let translateY = 0;
+            let isPanning = false;
+            let startX = 0;
+            let startY = 0;
 
             // --- INTERACTIVITY ---
             function toggleCollapse(nodeId) {
@@ -131,6 +256,63 @@
                     nodeData.isCollapsed = !nodeData.isCollapsed;
                     renderMindmap(); // Re-render the entire map
                 }
+            }
+
+            // --- AUTOMATIC LAYOUT CALCULATION ---
+            function calculateLayout(nodes) {
+                const LEVEL_X_SPACING = 450; // Increased for wider nodes
+                const NODE_Y_SPACING = 90; // Increased spacing for multi-line nodes
+                const START_X = 50;
+                const START_Y = 100;
+                
+                // Build tree structure
+                const childrenMap = new Map();
+                nodes.forEach(node => {
+                    if (!childrenMap.has(node.parent)) {
+                        childrenMap.set(node.parent, []);
+                    }
+                    childrenMap.get(node.parent).push(node);
+                });
+                
+                // Calculate positions recursively
+                const positions = new Map();
+                let currentY = START_Y;
+                
+                function layoutNode(node, x, y) {
+                    positions.set(node.id, { x, y });
+                    
+                    const children = childrenMap.get(node.id) || [];
+                    if (children.length === 0) {
+                        return y;
+                    }
+                    
+                    // Calculate total height needed for children
+                    const childX = x + LEVEL_X_SPACING;
+                    let childY = y;
+                    
+                    children.forEach((child, index) => {
+                        const endY = layoutNode(child, childX, childY);
+                        childY = endY + NODE_Y_SPACING;
+                    });
+                    
+                    // Center parent vertically relative to children
+                    const firstChild = children[0];
+                    const lastChild = children[children.length - 1];
+                    const firstChildY = positions.get(firstChild.id).y;
+                    const lastChildY = positions.get(lastChild.id).y;
+                    const centerY = (firstChildY + lastChildY) / 2;
+                    positions.set(node.id, { x, y: centerY });
+                    
+                    return lastChildY;
+                }
+                
+                // Find root and start layout
+                const root = nodes.find(n => n.parent === null);
+                if (root) {
+                    layoutNode(root, START_X, START_Y);
+                }
+                
+                return positions;
             }
 
             // --- RENDERING LOGIC ---
@@ -155,11 +337,18 @@
 
             function renderMindmap() {
                 // Clear existing elements
-                mapContainer.querySelectorAll('.node').forEach(node => node.remove());
+                mapContent.querySelectorAll('.node').forEach(node => node.remove());
                 svgContainer.innerHTML = '';
+                
+                // Set SVG attributes
+                svgContainer.setAttribute('width', '5000');
+                svgContainer.setAttribute('height', '5000');
 
                 const visibleNodes = getVisibleNodes();
                 const visibleNodeMap = new Map(visibleNodes.map(node => [node.id, node]));
+                
+                // Calculate positions automatically
+                const positions = calculateLayout(visibleNodes);
 
                 visibleNodes.forEach(nodeData => {
                     const nodeEl = document.createElement('div');
@@ -169,6 +358,30 @@
                     const textEl = document.createElement('span');
                     textEl.className = 'node-text';
                     textEl.textContent = nodeData.text;
+                    
+                    // --- Smart text wrapping based on length ---
+                    const textLength = nodeData.text.length;
+                    
+                    if (textLength <= SHORT_TEXT_THRESHOLD) {
+                        // Short text: keep compact
+                        textEl.classList.add('single-line');
+                        nodeEl.style.minWidth = '120px';
+                        nodeEl.style.maxWidth = '250px';
+                    } else if (textLength <= TEXT_THRESHOLD) {
+                        // Medium text: try to fit in one line
+                        textEl.classList.add('single-line');
+                        nodeEl.style.minWidth = '180px';
+                        nodeEl.style.maxWidth = '350px';
+                    } else {
+                        // Long text: allow multiple lines
+                        textEl.classList.add('multi-line');
+                        nodeEl.style.minWidth = '200px';
+                        nodeEl.style.maxWidth = '400px';
+                        // Add tooltip for very long text
+                        if (textLength > 60) {
+                            nodeEl.setAttribute('title', nodeData.text);
+                        }
+                    }
 
                     // --- Add arrows and collapse/expand indicators ---
                     const hasChildren = mindmapData.some(d => d.parent === nodeData.id);
@@ -196,19 +409,27 @@
                     }
                     
                     // Add click listener for interactivity
-                    nodeEl.addEventListener('click', () => toggleCollapse(nodeData.id));
+                    nodeEl.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        toggleCollapse(nodeData.id);
+                    });
 
-                    mapContainer.appendChild(nodeEl);
-                    nodeEl.style.left = `${nodeData.position.x}px`;
-                    nodeEl.style.top = `${nodeData.position.y}px`;
+                    mapContent.appendChild(nodeEl);
+                    
+                    // Use calculated position
+                    const pos = positions.get(nodeData.id) || { x: 0, y: 0 };
+                    nodeEl.style.left = `${pos.x}px`;
+                    nodeEl.style.top = `${pos.y}px`;
                 });
 
-                // --- Draw lines for visible nodes ---
-                visibleNodes.forEach(nodeData => {
-                    if (nodeData.parent && visibleNodeMap.has(nodeData.parent)) {
-                        const parentData = visibleNodeMap.get(nodeData.parent);
-                        createCurve(parentData, nodeData);
-                    }
+                // --- Draw lines for visible nodes (after DOM updates) ---
+                requestAnimationFrame(() => {
+                    visibleNodes.forEach(nodeData => {
+                        if (nodeData.parent && visibleNodeMap.has(nodeData.parent)) {
+                            const parentData = visibleNodeMap.get(nodeData.parent);
+                            createCurve(parentData, nodeData);
+                        }
+                    });
                 });
             }
 
@@ -216,7 +437,10 @@
                 const startEl = document.getElementById(startNodeData.id);
                 const endEl = document.getElementById(endNodeData.id);
                 
-                if (!startEl || !endEl) return;
+                if (!startEl || !endEl) {
+                    console.warn('Could not find elements for curve:', startNodeData.id, endNodeData.id);
+                    return;
+                }
 
                 const startX = startEl.offsetLeft + startEl.offsetWidth;
                 const startY = startEl.offsetTop + startEl.offsetHeight / 2;
@@ -234,7 +458,86 @@
                 pathEl.classList.add('line-path');
                 svgContainer.appendChild(pathEl);
             }
+            
+            // --- PAN & ZOOM FUNCTIONALITY ---
+            function updateTransform() {
+                mapContent.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            }
+            
+            // Mouse panning
+            mapContainer.addEventListener('mousedown', (e) => {
+                if (e.target === mapContainer || e.target === mapContent || e.target === svgContainer) {
+                    isPanning = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    mapContainer.classList.add('grabbing');
+                }
+            });
+            
+            mapContainer.addEventListener('mousemove', (e) => {
+                if (isPanning) {
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                }
+            });
+            
+            mapContainer.addEventListener('mouseup', () => {
+                isPanning = false;
+                mapContainer.classList.remove('grabbing');
+            });
+            
+            mapContainer.addEventListener('mouseleave', () => {
+                isPanning = false;
+                mapContainer.classList.remove('grabbing');
+            });
+            
+            // Mouse wheel zoom
+            mapContainer.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = scale * delta;
+                
+                if (newScale >= 0.3 && newScale <= 3) {
+                    // Zoom towards mouse position
+                    const rect = mapContainer.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+                    
+                    translateX = mouseX - (mouseX - translateX) * delta;
+                    translateY = mouseY - (mouseY - translateY) * delta;
+                    scale = newScale;
+                    
+                    updateTransform();
+                }
+            });
+            
+            // Zoom controls
+            document.getElementById('zoom-in').addEventListener('click', () => {
+                if (scale < 3) {
+                    scale *= 1.2;
+                    updateTransform();
+                }
+            });
+            
+            document.getElementById('zoom-out').addEventListener('click', () => {
+                if (scale > 0.3) {
+                    scale *= 0.8;
+                    updateTransform();
+                }
+            });
+            
+            document.getElementById('zoom-reset').addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+            });
+            
+            // Initial render
             renderMindmap();
+            updateTransform();
             window.addEventListener('resize', renderMindmap);
         });
     </script>

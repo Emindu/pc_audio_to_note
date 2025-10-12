@@ -1,0 +1,255 @@
+[
+  {
+    "id": "root",
+    "text": "Mastering English Spelling",
+    "parent": null,
+    "level": 0,
+    "position": {
+      "x": 100,
+      "y": 300
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "importance",
+    "text": "Why Spelling Matters",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 300,
+      "y": 200
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "challenges",
+    "text": "Common Spelling Challenges",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 300,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "methods",
+    "text": "Effective Spelling Methods",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 500,
+      "y": 200
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "apps",
+    "text": "Fun Spelling Apps",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 500,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "meaning",
+    "text": "Spelling Affects Meaning",
+    "parent": "importance",
+    "level": 2,
+    "position": {
+      "x": 200,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "clarity",
+    "text": "Clear Communication",
+    "parent": "importance",
+    "level": 2,
+    "position": {
+      "x": 200,
+      "y": 250
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "forgetting",
+    "text": "Forgetting Letter Order",
+    "parent": "challenges",
+    "level": 2,
+    "position": {
+      "x": 200,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "guessing",
+    "text": "Guessing by Sound",
+    "parent": "challenges",
+    "level": 2,
+    "position": {
+      "x": 200,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "reading",
+    "text": "Read English Daily",
+    "parent": "methods",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "breaking",
+    "text": "Break Words into Parts",
+    "parent": "methods",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 250
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "mistakes",
+    "text": "Learn Common Mistakes",
+    "parent": "methods",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "practice",
+    "text": "Practice Regularly",
+    "parent": "methods",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "wordtrip",
+    "text": "WordTrip Game",
+    "parent": "apps",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "wordscapes",
+    "text": "WordScapes Game",
+    "parent": "apps",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "vocabulary",
+    "text": "Build Vocabulary Apps",
+    "parent": "apps",
+    "level": 2,
+    "position": {
+      "x": 400,
+      "y": 550
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "repetition",
+    "text": "Repetition is Key",
+    "parent": "practice",
+    "level": 3,
+    "position": {
+      "x": 500,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "flashcards",
+    "text": "Use Flashcards",
+    "parent": "practice",
+    "level": 3,
+    "position": {
+      "x": 500,
+      "y": 500
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "daily",
+    "text": "Daily Practice Routine",
+    "parent": "practice",
+    "level": 3,
+    "position": {
+      "x": 500,
+      "y": 600
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "example",
+    "text": "Example: Fluxenosinnihili-pilification",
+    "parent": "breaking",
+    "level": 3,
+    "position": {
+      "x": 600,
+      "y": 250
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "syllables",
+    "text": "Break into Syllables",
+    "parent": "breaking",
+    "level": 3,
+    "position": {
+      "x": 600,
+      "y": 350
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "tricky",
+    "text": "List Tricky Words",
+    "parent": "mistakes",
+    "level": 3,
+    "position": {
+      "x": 600,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "common",
+    "text": "Common Error Words",
+    "parent": "mistakes",
+    "level": 3,
+    "position": {
+      "x": 600,
+      "y": 550
+    },
+    "isCollapsed": false
+  }
+]
