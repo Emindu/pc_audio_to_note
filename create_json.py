@@ -250,6 +250,15 @@ def main():
     root_node = next((node for node in parsed_json if node['parent'] is None), None)
     if root_node:
         print(f"   - Root topic: '{root_node['text']}'")
+        
+        # Generate filename from root node text (replace spaces with underscores)
+        import re
+        root_filename = root_node['text'].replace(' ', '_')
+        # Remove any special characters that might cause issues in filenames
+        root_filename = re.sub(r'[^\w\-_]', '', root_filename)
+        
+        # Print for shell capture (last line of output)
+        print(f"\n{root_filename}")
 
 if __name__ == "__main__":
     main()

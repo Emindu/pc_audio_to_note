@@ -1,8 +1,8 @@
-// Auto-generated from mindmap_20251012_151740.json
+// Auto-generated from mindmap_20251012_160908.json
 const mindmapData = [
   {
     "id": "root",
-    "text": "Habit Formation and Change",
+    "text": "Effects of Forced Solitude",
     "parent": null,
     "level": 0,
     "position": {
@@ -12,299 +12,398 @@ const mindmapData = [
     "isCollapsed": false
   },
   {
-    "id": "gap_and_challenge",
-    "text": "Gap Between Self and Goals",
+    "id": "psychological",
+    "text": "Psychological Impact",
     "parent": "root",
     "level": 1,
     "position": {
       "x": 300,
-      "y": 150
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "brain_jungle_metaphor",
-    "text": "Brain as Jungle Metaphor",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 300,
-      "y": 350
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "routines_vs_habits",
-    "text": "Routines vs Habits",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 300,
-      "y": 550
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_building",
-    "text": "How to Build Habits",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 600,
-      "y": 150
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_journal",
-    "text": "Habit Journal and Support",
-    "parent": "root",
-    "level": 1,
-    "position": {
-      "x": 600,
-      "y": 350
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "gap_and_challenge_1",
-    "text": "Desire vs Reality",
-    "parent": "gap_and_challenge",
-    "level": 2,
-    "position": {
-      "x": 450,
-      "y": 100
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "gap_and_challenge_2",
-    "text": "Frustration from Failure",
-    "parent": "gap_and_challenge",
-    "level": 2,
-    "position": {
-      "x": 450,
       "y": 200
     },
     "isCollapsed": false
   },
   {
-    "id": "gap_and_challenge_3",
-    "text": "Misconceptions about Willpower",
-    "parent": "gap_and_challenge",
-    "level": 2,
+    "id": "physical",
+    "text": "Physical Health Effects",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 450,
-      "y": 300
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "brain_jungle_metaphor_1",
-    "text": "Energy Cost of Decisions",
-    "parent": "brain_jungle_metaphor",
-    "level": 2,
-    "position": {
-      "x": 450,
-      "y": 300
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "brain_jungle_metaphor_2",
-    "text": "Trails to Highways Analogy",
-    "parent": "brain_jungle_metaphor",
-    "level": 2,
-    "position": {
-      "x": 450,
+      "x": 300,
       "y": 400
     },
     "isCollapsed": false
   },
   {
-    "id": "brain_jungle_metaphor_3",
-    "text": "Comfort of Established Paths",
-    "parent": "brain_jungle_metaphor",
-    "level": 2,
+    "id": "context",
+    "text": "Context and Prevalence",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 450,
-      "y": 500
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "routines_vs_habits_1",
-    "text": "Definition of Routines",
-    "parent": "routines_vs_habits",
-    "level": 2,
-    "position": {
-      "x": 450,
-      "y": 500
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "routines_vs_habits_2",
-    "text": "Wise Planner Role",
-    "parent": "routines_vs_habits",
-    "level": 2,
-    "position": {
-      "x": 450,
+      "x": 300,
       "y": 600
     },
     "isCollapsed": false
   },
   {
-    "id": "routines_vs_habits_3",
-    "text": "Definition of Habits",
-    "parent": "routines_vs_habits",
-    "level": 2,
+    "id": "coping",
+    "text": "Coping and Limitations",
+    "parent": "root",
+    "level": 1,
     "position": {
-      "x": 450,
-      "y": 700
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "routines_vs_habits_4",
-    "text": "Impulsive Toddler Role",
-    "parent": "routines_vs_habits",
-    "level": 2,
-    "position": {
-      "x": 450,
+      "x": 300,
       "y": 800
     },
     "isCollapsed": false
   },
   {
-    "id": "routines_vs_habits_5",
-    "text": "Triggers and Context Cues",
-    "parent": "routines_vs_habits",
+    "id": "stress",
+    "text": "Stress Hormone Spikes",
+    "parent": "psychological",
     "level": 2,
     "position": {
-      "x": 450,
-      "y": 900
+      "x": 500,
+      "y": 150
     },
     "isCollapsed": false
   },
   {
-    "id": "routines_vs_habits_6",
-    "text": "Reward and Habit Formation",
-    "parent": "routines_vs_habits",
+    "id": "identity",
+    "text": "Threat to Identity",
+    "parent": "psychological",
     "level": 2,
     "position": {
-      "x": 450,
-      "y": 1000
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_building_1",
-    "text": "Small Manageable Actions",
-    "parent": "habit_building",
-    "level": 2,
-    "position": {
-      "x": 750,
-      "y": 100
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_building_2",
-    "text": "Creating Clear Triggers",
-    "parent": "habit_building",
-    "level": 2,
-    "position": {
-      "x": 750,
+      "x": 500,
       "y": 200
     },
     "isCollapsed": false
   },
   {
-    "id": "habit_building_3",
-    "text": "Routine to Habit Transition",
-    "parent": "habit_building",
+    "id": "mood",
+    "text": "Depression and Anxiety",
+    "parent": "psychological",
     "level": 2,
     "position": {
-      "x": 750,
+      "x": 500,
+      "y": 250
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "cognition",
+    "text": "Cognitive Impairment",
+    "parent": "psychological",
+    "level": 2,
+    "position": {
+      "x": 500,
       "y": 300
     },
     "isCollapsed": false
   },
   {
-    "id": "habit_building_4",
-    "text": "Making Actions Enjoyable",
-    "parent": "habit_building",
+    "id": "sleep",
+    "text": "Sleep Disturbances",
+    "parent": "physical",
     "level": 2,
     "position": {
-      "x": 750,
-      "y": 400
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_building_5",
-    "text": "Timeframe for Habit Formation",
-    "parent": "habit_building",
-    "level": 2,
-    "position": {
-      "x": 750,
-      "y": 500
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_building_6",
-    "text": "Persistence and Consistency",
-    "parent": "habit_building",
-    "level": 2,
-    "position": {
-      "x": 750,
-      "y": 600
-    },
-    "isCollapsed": false
-  },
-  {
-    "id": "habit_journal_1",
-    "text": "Purpose of Habit Journal",
-    "parent": "habit_journal",
-    "level": 2,
-    "position": {
-      "x": 750,
+      "x": 500,
       "y": 350
     },
     "isCollapsed": false
   },
   {
-    "id": "habit_journal_2",
-    "text": "Tutorial and Guidance",
-    "parent": "habit_journal",
+    "id": "symptoms",
+    "text": "Physical Symptoms",
+    "parent": "physical",
     "level": 2,
     "position": {
-      "x": 750,
+      "x": 500,
+      "y": 400
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "appetite",
+    "text": "Weight Loss and Appetite",
+    "parent": "physical",
+    "level": 2,
+    "position": {
+      "x": 500,
       "y": 450
     },
     "isCollapsed": false
   },
   {
-    "id": "habit_journal_3",
-    "text": "Reflection and Science Breaks",
-    "parent": "habit_journal",
+    "id": "history",
+    "text": "Historical Background",
+    "parent": "context",
     "level": 2,
     "position": {
-      "x": 750,
+      "x": 500,
       "y": 550
     },
     "isCollapsed": false
   },
   {
-    "id": "habit_journal_4",
-    "text": "Physical Design and Support",
-    "parent": "habit_journal",
+    "id": "prevalence",
+    "text": "Current Prevalence",
+    "parent": "context",
     "level": 2,
     "position": {
-      "x": 750,
+      "x": 500,
+      "y": 600
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "criticism",
+    "text": "Criticism and Reform",
+    "parent": "context",
+    "level": 2,
+    "position": {
+      "x": 500,
       "y": 650
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "routine",
+    "text": "Establishing Routine",
+    "parent": "coping",
+    "level": 2,
+    "position": {
+      "x": 500,
+      "y": 750
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "limits",
+    "text": "Limits of Coping",
+    "parent": "coping",
+    "level": 2,
+    "position": {
+      "x": 500,
+      "y": 800
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "chronic",
+    "text": "Chronic Stress Development",
+    "parent": "stress",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 140
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "reality",
+    "text": "Loss of Reality Testing",
+    "parent": "identity",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 190
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "spiral",
+    "text": "Thought Spiral and Impulses",
+    "parent": "identity",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 240
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "suicidal",
+    "text": "Suicidal Ideation Risk",
+    "parent": "mood",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 290
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "delusions",
+    "text": "Delusions and Hallucinations",
+    "parent": "mood",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 340
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "limbic",
+    "text": "Limbic System Hyperactivity",
+    "parent": "cognition",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 390
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "prefrontal",
+    "text": "Prefrontal Cortex Atrophy",
+    "parent": "cognition",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 440
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "time",
+    "text": "Loss of Time Sense",
+    "parent": "sleep",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 490
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "cardiac",
+    "text": "Heart Palpitations",
+    "parent": "symptoms",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 540
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "sensory",
+    "text": "Sensory Hypersensitivity",
+    "parent": "symptoms",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 590
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "digestive",
+    "text": "Digestive Issues",
+    "parent": "appetite",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 640
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "quakers",
+    "text": "Quaker Origins",
+    "parent": "history",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 690
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "critics",
+    "text": "Early Critics",
+    "parent": "history",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 740
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "resurgence",
+    "text": "1980s Resurgence",
+    "parent": "history",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 790
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "numbers",
+    "text": "US Prisoner Statistics",
+    "parent": "prevalence",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 840
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "abuse",
+    "text": "Use for Minor Infractions",
+    "parent": "prevalence",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 890
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "ptsd",
+    "text": "PTSD and Personality Shifts",
+    "parent": "criticism",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 940
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "reform",
+    "text": "Legal Reforms and Limits",
+    "parent": "criticism",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 990
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "exercise",
+    "text": "Exercise and Mental Activity",
+    "parent": "routine",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 1040
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "torture",
+    "text": "Classification as Torture",
+    "parent": "limits",
+    "level": 3,
+    "position": {
+      "x": 700,
+      "y": 1090
     },
     "isCollapsed": false
   }

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "root",
+    "text": "Food and Brain",
+    "parent": null,
+    "level": 0,
+    "position": { "x": 100, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "brainEnergy",
+    "text": "Brain Energy Needs",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 200, "y": 250 },
+    "isCollapsed": false
+  },
+  {
+    "id": "brainUsage",
+    "text": "Brain Usage",
+    "parent": "brainEnergy",
+    "level": 2,
+    "position": { "x": 300, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "energyConsumption",
+    "text": "Energy Consumption",
+    "parent": "brainEnergy",
+    "level": 2,
+    "position": { "x": 300, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "balancedDiet",
+    "text": "Balanced Diet",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 400, "y": 250 },
+    "isCollapsed": false
+  },
+  {
+    "id": "rainbowRule",
+    "text": "Rainbow Rule",
+    "parent": "balancedDiet",
+    "level": 2,
+    "position": { "x": 500, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "brainFoods",
+    "text": "Brain Foods",
+    "parent": "balancedDiet",
+    "level": 2,
+    "position": { "x": 500, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "salmonAvocado",
+    "text": "Salmon & Avocado",
+    "parent": "brainFoods",
+    "level": 3,
+    "position": { "x": 600, "y": 100 },
+    "isCollapsed": false
+  },
+  {
+    "id": "berriesWalnuts",
+    "text": "Berries & Walnuts",
+    "parent": "brainFoods",
+    "level": 3,
+    "position": { "x": 600, "y": 50 },
+    "isCollapsed": false
+  },
+  {
+    "id": "budgetEating",
+    "text": "Eating on a Budget",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 700, "y": 250 },
+    "isCollapsed": false
+  },
+  {
+    "id": "batchCooking",
+    "text": "Batch Cooking",
+    "parent": "budgetEating",
+    "level": 2,
+    "position": { "x": 800, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "quickMeals",
+    "text": "Quick Meals",
+    "parent": "budgetEating",
+    "level": 2,
+    "position": { "x": 800, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "brainSize",
+    "text": "Brain Size Comparison",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 900, "y": 250 },
+    "isCollapsed": false
+  },
+  {
+    "id": "spermWhaleBrain",
+    "text": "Sperm Whale's Brain",
+    "parent": "brainSize",
+    "level": 2,
+    "position": { "x": 1000, "y": 200 },
+    "isCollapsed": false
+  }
+]

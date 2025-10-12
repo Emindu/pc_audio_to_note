@@ -70,9 +70,8 @@ def save_markdown(markdown_content, output_file):
         f.write(markdown_content)
 
 def main():
-    # Create output filename with timestamp
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = f"meeting_notes_{timestamp}.md"
+    # Output filename
+    output_filename = "note.md"
     
     # Read the transcript
     transcript = read_transcript("transcript.txt")
@@ -88,9 +87,9 @@ def main():
     if markdown_content != "No response received from API":
         # Save the markdown file
         save_markdown(markdown_content, output_filename)
-        print(f"\nMarkdown notes have been created and saved to '{output_filename}'")
+        print(f"\n✅ Markdown notes have been created and saved to '{output_filename}'")
     else:
-        print("\nFailed to create markdown notes due to API error")
+        print("\n❌ Failed to create markdown notes due to API error")
 
 if __name__ == "__main__":
     main() 
