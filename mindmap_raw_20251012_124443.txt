@@ -1,0 +1,5 @@
+```json
+[
+  "[\"Root: Autoregressive Process of Order P, Level 0, ID: root, Text: In the case of an autoregressive process of order p, the autocorrelation function can be written then as the solution of a homogeneous difference equation. Again, we are working with the stationary case. You can recall the notation we were using.\", "\"Parent: null, ID: root\""]
+]
+```

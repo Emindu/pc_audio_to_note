@@ -1,0 +1,123 @@
+[
+  {
+    "id": "root",
+    "text": "Autoregressive Process",
+    "parent": null,
+    "level": 0,
+    "position": {
+      "x": 100,
+      "y": 300
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "def",
+    "text": "Defining the AR process",
+    "parent": "root",
+    "level": 1,
+    "position": {
+      "x": 400,
+      "y": 75
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "markov_chain",
+    "text": "Modeling the past values",
+    "parent": "def",
+    "level": 1,
+    "position": {
+      "x": 75,
+      "y": 150
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "order",
+    "text": "Order of the AR process",
+    "parent": "markov_chain",
+    "level": 1,
+    "position": {
+      "x": 150,
+      "y": 225
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "x_t",
+    "text": "Time step",
+    "parent": "order",
+    "level": 1,
+    "position": {
+      "x": 225,
+      "y": 375
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "y_t",
+    "text": "Output value",
+    "parent": "x_t",
+    "level": 1,
+    "position": {
+      "x": 225,
+      "y": 375
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "f_t",
+    "text": "Observational level equation",
+    "parent": "x_t",
+    "level": 1,
+    "position": {
+      "x": 375,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "w_t",
+    "text": "Weight vector",
+    "parent": "f_t",
+    "level": 1,
+    "position": {
+      "x": 450,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "G",
+    "text": "State-space representation",
+    "parent": "f_t",
+    "level": 1,
+    "position": {
+      "x": 450,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "G_h",
+    "text": "Expected value of G",
+    "parent": "G",
+    "level": 1,
+    "position": {
+      "x": 450,
+      "y": 450
+    },
+    "isCollapsed": false
+  },
+  {
+    "id": "G_inverse",
+    "text": "Inverse matrix",
+    "parent": "G_h",
+    "level": 1,
+    "position": {
+      "x": 450,
+      "y": 450
+    },
+    "isCollapsed": false
+  }
+]

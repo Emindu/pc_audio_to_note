@@ -1,0 +1,226 @@
+[
+  {
+    "id": "root",
+    "text": "Coding SVGs",
+    "parent": null,
+    "level": 0,
+    "position": { "x": 100, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "why-svg",
+    "text": "Why Code SVGs?",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-basics",
+    "text": "SVG Basics",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-elements",
+    "text": "SVG Elements",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 400 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-styling",
+    "text": "SVG Styling",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-animation",
+    "text": "SVG Animation",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-curves",
+    "text": "SVG Curves",
+    "parent": "root",
+    "level": 1,
+    "position": { "x": 300, "y": 700 },
+    "isCollapsed": false
+  },
+  {
+    "id": "why-interactive",
+    "text": "Interactive Potential",
+    "parent": "why-svg",
+    "level": 2,
+    "position": { "x": 500, "y": 150 },
+    "isCollapsed": false
+  },
+  {
+    "id": "why-data-driven",
+    "text": "Data-Driven Graphics",
+    "parent": "why-svg",
+    "level": 2,
+    "position": { "x": 500, "y": 200 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-vs-canvas",
+    "text": "SVG vs Canvas",
+    "parent": "why-svg",
+    "level": 2,
+    "position": { "x": 500, "y": 250 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-syntax",
+    "text": "SVG Syntax Rules",
+    "parent": "svg-basics",
+    "level": 2,
+    "position": { "x": 500, "y": 300 },
+    "isCollapsed": false
+  },
+  {
+    "id": "svg-attributes",
+    "text": "SVG Attributes",
+    "parent": "svg-basics",
+    "level": 2,
+    "position": { "x": 500, "y": 350 },
+    "isCollapsed": false
+  },
+  {
+    "id": "viewbox-coords",
+    "text": "ViewBox Coordinate System",
+    "parent": "svg-basics",
+    "level": 2,
+    "position": { "x": 500, "y": 400 },
+    "isCollapsed": false
+  },
+  {
+    "id": "circle-element",
+    "text": "Circle Element",
+    "parent": "svg-elements",
+    "level": 2,
+    "position": { "x": 500, "y": 450 },
+    "isCollapsed": false
+  },
+  {
+    "id": "rect-element",
+    "text": "Rectangle Element",
+    "parent": "svg-elements",
+    "level": 2,
+    "position": { "x": 500, "y": 500 },
+    "isCollapsed": false
+  },
+  {
+    "id": "path-element",
+    "text": "Path Element",
+    "parent": "svg-elements",
+    "level": 2,
+    "position": { "x": 500, "y": 550 },
+    "isCollapsed": false
+  },
+  {
+    "id": "group-element",
+    "text": "Group Element",
+    "parent": "svg-elements",
+    "level": 2,
+    "position": { "x": 500, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "fill-stroke",
+    "text": "Fill and Stroke",
+    "parent": "svg-styling",
+    "level": 2,
+    "position": { "x": 500, "y": 650 },
+    "isCollapsed": false
+  },
+  {
+    "id": "css-styling",
+    "text": "CSS Styling",
+    "parent": "svg-styling",
+    "level": 2,
+    "position": { "x": 500, "y": 700 },
+    "isCollapsed": false
+  },
+  {
+    "id": "js-animation",
+    "text": "JavaScript Animation",
+    "parent": "svg-animation",
+    "level": 2,
+    "position": { "x": 500, "y": 750 },
+    "isCollapsed": false
+  },
+  {
+    "id": "css-animation",
+    "text": "CSS Animation",
+    "parent": "svg-animation",
+    "level": 2,
+    "position": { "x": 500, "y": 800 },
+    "isCollapsed": false
+  },
+  {
+    "id": "quadratic-bezier",
+    "text": "Quadratic Bezier Curve",
+    "parent": "svg-curves",
+    "level": 2,
+    "position": { "x": 500, "y": 850 },
+    "isCollapsed": false
+  },
+  {
+    "id": "cubic-bezier",
+    "text": "Cubic Bezier Curve",
+    "parent": "svg-curves",
+    "level": 2,
+    "position": { "x": 500, "y": 900 },
+    "isCollapsed": false
+  },
+  {
+    "id": "arc-command",
+    "text": "Arc Command",
+    "parent": "svg-curves",
+    "level": 2,
+    "position": { "x": 500, "y": 950 },
+    "isCollapsed": false
+  },
+  {
+    "id": "move-line-commands",
+    "text": "Move and Line Commands",
+    "parent": "path-element",
+    "level": 3,
+    "position": { "x": 700, "y": 550 },
+    "isCollapsed": false
+  },
+  {
+    "id": "reuse-transform",
+    "text": "Reuse and Transform",
+    "parent": "path-element",
+    "level": 3,
+    "position": { "x": 700, "y": 600 },
+    "isCollapsed": false
+  },
+  {
+    "id": "curve-connectivity",
+    "text": "Smooth Curve Connectivity",
+    "parent": "cubic-bezier",
+    "level": 3,
+    "position": { "x": 700, "y": 900 },
+    "isCollapsed": false
+  },
+  {
+    "id": "arc-params",
+    "text": "Arc Parameters",
+    "parent": "arc-command",
+    "level": 3,
+    "position": { "x": 700, "y": 950 },
+    "isCollapsed": false
+  }
+]

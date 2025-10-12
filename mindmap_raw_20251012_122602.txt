@@ -1,0 +1,5 @@
+```json
+[
+  "{\"id\": \"root\", \"text\": \"This lesson you will be translating text from English to French and summarizing long documents and using open source models from Meta. Let's get started.\", \"parent\": \"root\"}"
+]
+```

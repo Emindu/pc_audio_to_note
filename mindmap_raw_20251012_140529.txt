@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "content": "There are multiple curves. The simple one is called a quadratic Bezier curve. Here again, we start with a move-to command, and then we have a quadratic Bezier curve command, which starts with a Q letter. Path segments always continue the previous segment. This quadratic Bezier curve doesn't have a starting point that's why we have to start it with the move-to, and then the endpoint of this curve is defined by the quadratic Bezier curve. Each segment usually not just continues the previous path segment, but also ends with a coordinate that will be the endpoint of the segment."
+    },
+    {
+        "id": 2,
+        "content": "Cubic Bezier curves are very similar to a quadratic Bezier curve. In this case, we also start with a move-to command, and this path segment is also ending with the endpoint, but before that, we define two other coordinates. One for the start and one for the end. And what's interesting here is that you can create bigger bulky curves, but also, if you change only one of these control points, it doesn't really affect the other one. Like, if I'm dragging this coordinate here, of course, the whole curve is changing, but the end point is still having the same finish."
+    },
+    {
+        "id": 3,
+        "content": "Cubic Bezier curves are very useful when we want to connect different path segments. Like in these cases: we have two straight lines in each image. Like here we have a straight line, and then here we have a straight line, and then we want to connect these with a cubic Bezier curve. And we can do this in a way that it doesn't look like the line is broken. There's no inflection point. Here the transition is smooth. And we can do this by aligning the control points with the path segment before and the path segment after."
+    },
+    {
+        "id": 4,
+        "content": "Now, arcs are fairly complex, but you barely ever need them. At least so far in my hobby projects I wasn't really using arcs. But in case you need it you can find more about it in the SVG tutorial."
+    }
+]

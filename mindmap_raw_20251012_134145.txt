@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Circle",
+    "attributes": {
+      "stroke": "#00ff00",
+      "stroke-linecap": "round",
+      "stroke-width": 2
+    },
+    "transformations": {}
+  },
+  {
+    "name": "Line",
+    "attributes": {
+      "stroke": "#ff0000",
+      "stroke-linecap": "round"
+    },
+    "transformations": {
+      "rotate": true,
+      "translateX": 150
+    }
+  },
+  {
+    "name": "Cubic Bezier",
+    "attributes": {
+      "stroke": "#ff0000",
+      "stroke-linecap": "round"
+    },
+    "transformations": {
+      "rotate": true,
+      "translateX": 150
+    }
+  },
+  {
+    "name": "Arc",
+    "attributes": {
+      "stroke": "#00ff00",
+      "stroke-width": 2,
+      "linecap": "round"
+    },
+    "transformations": {
+      "rotate": true,
+      "translateX": 150
+    }
+  },
+  {
+    "name": "Clock",
+    "attributes": {
+      "animate": true,
+      "startAngle": 0,
+      "endAngle": 360,
+      "frameCount": 20
+    }
+  }
+]

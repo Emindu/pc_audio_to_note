@@ -1,0 +1,6 @@
+```json
+{
+  "title": "SVG Introduction",
+  "content": "SVG is a vector image format that is widely used for web graphics. It uses mathematical equations to define shapes, allowing for scalability without loss of quality. Key features include: \n\n*   **Vector Graphics:** Images are defined by mathematical equations, so they scale without pixelation.\n*   **Scalability:** Can be resized to any size without loss of quality.\n*   **Animation:** Supports animation and interactivity.\n*   **Path-based:** Uses paths to create shapes, allowing for complex designs.\n*   **Flexibility:** Offers a wide range of shapes and features.\n\nSVG is a powerful tool for creating graphics for websites, applications, and more. It's a great choice for projects that require scalability and interactivity."
+}
+```

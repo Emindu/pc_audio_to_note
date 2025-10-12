@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map Visualization</title>
+    <style>
+        /* --- Basic Setup --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #343541; /* Dark background from image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ececf1;
+            overflow: hidden;
+        }
+
+        /* --- Mind Map Area --- */
+        #mindmap-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: scale(0.9); /* Zoom out slightly to fit */
+        }
+        
+        /* --- SVG for Lines --- */
+        #mindmap-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Behind nodes */
+            pointer-events: none; /* Allows clicking through the SVG to nodes */
+        }
+        
+        .line-path {
+            stroke: #5a5c6e;
+            stroke-width: 2px;
+            fill: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* --- Node Styling --- */
+        .node {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 10;
+            min-width: 100px;
+        }
+        
+        .node:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        .node-text {
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .node-arrow {
+            font-size: 16px;
+            margin-left: 10px;
+            margin-right: -5px;
+            color: #a0a2b0;
+        }
+        
+        .node-arrow.left {
+            margin-left: -5px;
+            margin-right: 10px;
+        }
+        
+        .node-arrow.collapsed-indicator {
+            font-weight: bold;
+        }
+
+        /* --- Color-coded Node Levels --- */
+        .node-level-0 {
+            background-color: #5d5f7b;
+            border: 1px solid #7a7d9c;
+        }
+
+        .node-level-1 {
+            background-color: #4b4e5a;
+            border: 1px solid #636675;
+        }
+        
+        .node-level-2 {
+            background-color: #4a625a;
+            border: 1px solid #627c73;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="mindmap-container">
+        <svg id="mindmap-svg"></svg>
+    </div>
+
+    <!-- Load mindmap data from external JavaScript file -->
+    <script src="mindmap_data.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA SOURCE ---
+            // mindmapData is loaded from mindmap_data.js
+
+            const mapContainer = document.getElementById('mindmap-container');
+            const svgContainer = document.getElementById('mindmap-svg');
+            const nodeMap = new Map(mindmapData.map(node => [node.id, node]));
+
+            // --- INTERACTIVITY ---
+            function toggleCollapse(nodeId) {
+                const nodeData = nodeMap.get(nodeId);
+                // Only toggle if the node can be collapsed (has children)
+                if (nodeData && typeof nodeData.isCollapsed !== 'undefined') {
+                    nodeData.isCollapsed = !nodeData.isCollapsed;
+                    renderMindmap(); // Re-render the entire map
+                }
+            }
+
+            // --- RENDERING LOGIC ---
+            function getVisibleNodes() {
+                const visible = [];
+                for (const node of mindmapData) {
+                    let isVisible = true;
+                    let currentParent = node.parent ? nodeMap.get(node.parent) : null;
+                    while (currentParent) {
+                        if (currentParent.isCollapsed) {
+                            isVisible = false;
+                            break;
+                        }
+                        currentParent = currentParent.parent ? nodeMap.get(currentParent.parent) : null;
+                    }
+                    if (isVisible) {
+                        visible.push(node);
+                    }
+                }
+                return visible;
+            }
+
+            function renderMindmap() {
+                // Clear existing elements
+                mapContainer.querySelectorAll('.node').forEach(node => node.remove());
+                svgContainer.innerHTML = '';
+
+                const visibleNodes = getVisibleNodes();
+                const visibleNodeMap = new Map(visibleNodes.map(node => [node.id, node]));
+
+                visibleNodes.forEach(nodeData => {
+                    const nodeEl = document.createElement('div');
+                    nodeEl.id = nodeData.id;
+                    nodeEl.classList.add('node', `node-level-${nodeData.level}`);
+                    
+                    const textEl = document.createElement('span');
+                    textEl.className = 'node-text';
+                    textEl.textContent = nodeData.text;
+
+                    // --- Add arrows and collapse/expand indicators ---
+                    const hasChildren = mindmapData.some(d => d.parent === nodeData.id);
+                    
+                    if (nodeData.parent) {
+                        const arrowEl = document.createElement('span');
+                        arrowEl.className = 'node-arrow left';
+                        arrowEl.textContent = '<';
+                        nodeEl.appendChild(arrowEl);
+                    }
+                    
+                    nodeEl.appendChild(textEl);
+                    
+                    if (hasChildren) {
+                        const arrowEl = document.createElement('span');
+                        arrowEl.className = 'node-arrow';
+                        // Change arrow based on collapsed state
+                        if (nodeData.isCollapsed) {
+                            arrowEl.textContent = '+';
+                            arrowEl.classList.add('collapsed-indicator');
+                        } else {
+                            arrowEl.textContent = '>';
+                        }
+                        nodeEl.appendChild(arrowEl);
+                    }
+                    
+                    // Add click listener for interactivity
+                    nodeEl.addEventListener('click', () => toggleCollapse(nodeData.id));
+
+                    mapContainer.appendChild(nodeEl);
+                    nodeEl.style.left = `${nodeData.position.x}px`;
+                    nodeEl.style.top = `${nodeData.position.y}px`;
+                });
+
+                // --- Draw lines for visible nodes ---
+                visibleNodes.forEach(nodeData => {
+                    if (nodeData.parent && visibleNodeMap.has(nodeData.parent)) {
+                        const parentData = visibleNodeMap.get(nodeData.parent);
+                        createCurve(parentData, nodeData);
+                    }
+                });
+            }
+
+            function createCurve(startNodeData, endNodeData) {
+                const startEl = document.getElementById(startNodeData.id);
+                const endEl = document.getElementById(endNodeData.id);
+                
+                if (!startEl || !endEl) return;
+
+                const startX = startEl.offsetLeft + startEl.offsetWidth;
+                const startY = startEl.offsetTop + startEl.offsetHeight / 2;
+                const endX = endEl.offsetLeft;
+                const endY = endEl.offsetTop + endEl.offsetHeight / 2;
+                
+                const c1x = startX + (endX - startX) / 2;
+                const c1y = startY;
+                const c2x = endX - (endX - startX) / 2;
+                const c2y = endY;
+
+                const pathData = `M ${startX},${startY} C ${c1x},${c1y} ${c2x},${c2y} ${endX},${endY}`;
+                const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                pathEl.setAttribute('d', pathData);
+                pathEl.classList.add('line-path');
+                svgContainer.appendChild(pathEl);
+            }
+            renderMindmap();
+            window.addEventListener('resize', renderMindmap);
+        });
+    </script>
+</body>
+</html>
+
