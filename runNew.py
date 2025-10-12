@@ -60,6 +60,7 @@ echo ""
 echo "📋 Copying files..."
 cp index.html "$target_path/" && echo "✅ Copied index.html"
 cp mindmap_data.js "$target_path/" && echo "✅ Copied mindmap_data.js"
+cp note_data.js "$target_path/" && echo "✅ Copied note_data.js"
 cp note.md "$target_path/" && echo "✅ Copied note.md"
 
 # Function to create/update root index.html

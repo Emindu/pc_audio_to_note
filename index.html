@@ -8,17 +8,38 @@
         /* --- Basic Setup --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #343541; /* Dark background from image */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #343541;
             margin: 0;
             color: #ececf1;
-            overflow: hidden;
+            overflow-x: hidden;
+        }
+        
+        /* --- Layout Container --- */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         /* --- Mind Map Area --- */
+        #mindmap-section {
+            flex: 0 0 45vh;
+            border-bottom: 2px solid #5a5c6e;
+            position: relative;
+            transition: flex 0.3s ease;
+        }
+        
+        #mindmap-section.fullscreen {
+            flex: 1 1 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 9999;
+            border-bottom: none;
+        }
+        
         #mindmap-container {
             position: relative;
             width: 100%;
@@ -192,30 +213,220 @@
             background-color: #5d5f7b;
             transform: scale(1.1);
         }
+        
+        /* --- Resize Handle --- */
+        #resize-handle {
+            height: 6px;
+            background-color: #5a5c6e;
+            cursor: ns-resize;
+            position: relative;
+            transition: background-color 0.2s ease;
+        }
+        
+        #resize-handle:hover {
+            background-color: #7a7d9c;
+        }
+        
+        #resize-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 4px;
+            background-color: #a0a2b0;
+            border-radius: 2px;
+        }
+        
+        /* --- Notes Section --- */
+        #notes-section {
+            flex: 1;
+            overflow-y: auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #2d2e3a 0%, #25262f 100%);
+            position: relative;
+        }
+        
+        #notes-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            background-color: rgba(42, 43, 54, 0.6);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #notes-content h1 {
+            color: #a8c7fa;
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 0.6em;
+            border-bottom: 3px solid #5a7a9c;
+            padding-bottom: 0.4em;
+            font-weight: 700;
+        }
+        
+        #notes-content h2 {
+            color: #8fb4e8;
+            font-size: 1.6em;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 600;
+            border-left: 4px solid #6a8fc8;
+            padding-left: 12px;
+        }
+        
+        #notes-content h3 {
+            color: #b8cfe8;
+            font-size: 1.3em;
+            margin-top: 1.4em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        
+        #notes-content p {
+            margin: 1.2em 0;
+            color: #e8eef5;
+            font-size: 1.05em;
+        }
+        
+        #notes-content ul, #notes-content ol {
+            margin: 1.2em 0;
+            padding-left: 2.5em;
+        }
+        
+        #notes-content li {
+            margin: 0.7em 0;
+            color: #e0e8f0;
+            line-height: 1.7;
+        }
+        
+        #notes-content li::marker {
+            color: #7a9fc8;
+        }
+        
+        #notes-content code {
+            background-color: #1a1b24;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.92em;
+            color: #a8c7fa;
+            border: 1px solid #3a3b4a;
+        }
+        
+        #notes-content pre {
+            background-color: #1a1b24;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #4a4b5a;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        #notes-content pre code {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+        }
+        
+        #notes-content blockquote {
+            border-left: 5px solid #6a8fc8;
+            padding-left: 1.2em;
+            margin: 1.5em 0;
+            color: #b8cfe8;
+            font-style: italic;
+            background-color: rgba(106, 143, 200, 0.08);
+            padding: 12px 12px 12px 20px;
+            border-radius: 4px;
+        }
+        
+        #notes-content strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        #notes-content em {
+            color: #c0d4ea;
+        }
+        
+        #notes-content a {
+            color: #8fb4e8;
+            text-decoration: none;
+            border-bottom: 2px solid #6a8fc8;
+            transition: all 0.2s ease;
+        }
+        
+        #notes-content a:hover {
+            color: #a8c7fa;
+            border-bottom-color: #8fb4e8;
+            background-color: rgba(106, 143, 200, 0.1);
+        }
+        
+        .notes-loading {
+            text-align: center;
+            padding: 40px;
+            color: #a0a2b0;
+        }
+        
+        .section-title {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #a0a2b0;
+            font-weight: 600;
+            z-index: 999;
+            background-color: rgba(52, 53, 65, 0.9);
+            padding: 5px 12px;
+            border-radius: 4px;
+        }
 
     </style>
 </head>
 <body>
 
-    <div id="mindmap-container">
-        <div id="mindmap-content">
-            <svg id="mindmap-svg"></svg>
-        </div>
-    </div>
-    
-    <div id="zoom-controls">
-        <button class="zoom-btn" id="zoom-in" title="Zoom In">+</button>
-        <button class="zoom-btn" id="zoom-out" title="Zoom Out">−</button>
-        <button class="zoom-btn" id="zoom-reset" title="Reset View">⟲</button>
+    <div class="main-container">
+        <!-- Mind Map Section -->
+        <section id="mindmap-section">
+            <div class="section-title">🗺️ Mind Map</div>
+            <div id="mindmap-container">
+                <div id="mindmap-content">
+                    <svg id="mindmap-svg"></svg>
+                </div>
+            </div>
+            
+            <div id="zoom-controls">
+                <button class="zoom-btn" id="zoom-in" title="Zoom In">+</button>
+                <button class="zoom-btn" id="zoom-out" title="Zoom Out">−</button>
+                <button class="zoom-btn" id="zoom-reset" title="Reset View">⟲</button>
+                <button class="zoom-btn" id="fullscreen-toggle" title="Toggle Fullscreen">⛶</button>
+            </div>
+        </section>
+        
+        <!-- Resize Handle -->
+        <div id="resize-handle"></div>
+        
+        <!-- Notes Section -->
+        <section id="notes-section">
+            <div class="section-title">📝 Notes</div>
+            <div id="notes-content">
+                <div class="notes-loading">Loading notes...</div>
+            </div>
+        </section>
     </div>
 
-    <!-- Load mindmap data from external JavaScript file -->
+    <!-- Load mindmap data and notes from external JavaScript files -->
     <script src="mindmap_data.js"></script>
+    <script src="note_data.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- DATA SOURCE ---
             // mindmapData is loaded from mindmap_data.js
+            // noteMarkdown is loaded from note_data.js
 
             const mapContainer = document.getElementById('mindmap-container');
             const mapContent = document.getElementById('mindmap-content');
@@ -535,10 +746,130 @@
                 updateTransform();
             });
             
+            // --- FULLSCREEN TOGGLE ---
+            const mindmapSection = document.getElementById('mindmap-section');
+            const notesSection = document.getElementById('notes-section');
+            const resizeHandle = document.getElementById('resize-handle');
+            let isFullscreen = false;
+            
+            document.getElementById('fullscreen-toggle').addEventListener('click', () => {
+                isFullscreen = !isFullscreen;
+                
+                if (isFullscreen) {
+                    mindmapSection.classList.add('fullscreen');
+                    notesSection.style.display = 'none';
+                    resizeHandle.style.display = 'none';
+                } else {
+                    mindmapSection.classList.remove('fullscreen');
+                    notesSection.style.display = 'block';
+                    resizeHandle.style.display = 'block';
+                }
+            });
+            
+            // --- RESIZE HANDLE FUNCTIONALITY ---
+            let isResizing = false;
+            let startResizeY = 0;
+            let startMindmapHeight = 0;
+            
+            resizeHandle.addEventListener('mousedown', (e) => {
+                isResizing = true;
+                startResizeY = e.clientY;
+                const mindmapRect = mindmapSection.getBoundingClientRect();
+                startMindmapHeight = mindmapRect.height;
+                document.body.style.cursor = 'ns-resize';
+                e.preventDefault();
+            });
+            
+            document.addEventListener('mousemove', (e) => {
+                if (isResizing) {
+                    const deltaY = e.clientY - startResizeY;
+                    const newHeight = startMindmapHeight + deltaY;
+                    const windowHeight = window.innerHeight;
+                    
+                    // Constrain between 20vh and 80vh
+                    const minHeight = windowHeight * 0.2;
+                    const maxHeight = windowHeight * 0.8;
+                    
+                    if (newHeight >= minHeight && newHeight <= maxHeight) {
+                        const heightVh = (newHeight / windowHeight) * 100;
+                        mindmapSection.style.flex = `0 0 ${heightVh}vh`;
+                    }
+                }
+            });
+            
+            document.addEventListener('mouseup', () => {
+                if (isResizing) {
+                    isResizing = false;
+                    document.body.style.cursor = '';
+                }
+            });
+            
             // Initial render
             renderMindmap();
             updateTransform();
             window.addEventListener('resize', renderMindmap);
+            
+            // --- LOAD AND RENDER MARKDOWN NOTES ---
+            function loadNotes() {
+                const notesContent = document.getElementById('notes-content');
+                
+                try {
+                    // noteMarkdown is loaded from note_data.js
+                    if (typeof noteMarkdown === 'undefined' || !noteMarkdown) {
+                        throw new Error('Notes data not found');
+                    }
+                    
+                    const markdown = noteMarkdown;
+                    
+                    // Simple markdown to HTML conversion
+                    let html = markdown
+                        // Headers
+                        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                        // Bold
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        // Italic
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                        // Code blocks
+                        .replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>')
+                        // Inline code
+                        .replace(/`([^`]+)`/g, '<code>$1</code>')
+                        // Links
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                        // Unordered lists
+                        .replace(/^\- (.*$)/gm, '<li>$1</li>')
+                        // Blockquotes
+                        .replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>')
+                        // Line breaks to paragraphs
+                        .replace(/\n\n/g, '</p><p>')
+                        .replace(/\n/g, '<br>');
+                    
+                    // Wrap in paragraph tags
+                    html = '<p>' + html + '</p>';
+                    
+                    // Wrap lists in ul tags
+                    html = html.replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>');
+                    
+                    // Clean up empty paragraphs
+                    html = html.replace(/<p><\/p>/g, '');
+                    html = html.replace(/<p><br><\/p>/g, '');
+                    
+                    notesContent.innerHTML = html;
+                    
+                } catch (error) {
+                    console.error('Error loading notes:', error);
+                    notesContent.innerHTML = `
+                        <div class="notes-loading">
+                            <p>📝 No notes available</p>
+                            <p style="font-size: 0.9em; color: #7a7d9c;">The note data could not be loaded.</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Load notes
+            loadNotes();
         });
     </script>
 </body>

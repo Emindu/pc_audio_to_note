@@ -14,15 +14,15 @@ def read_transcript(file_path):
 
 def format_prompt(transcript):
     """Format the prompt for the Perplexity API."""
-    return f"""Please create a well-structured markdown note from the following transcript. 
-    Include key points, main ideas, and organize the information in a clear, hierarchical format.
-    Concise (Brief & Direct)
-    Use appropriate markdown formatting like headers, bullet points, and emphasis where needed.
-    only create note using given transcript, do not make up any information.
-    
+    return f"""Create a concise markdown note from this transcript. Include only key points and main ideas.
+
+    Requirements:
+    - Use headers and bullet points
+    - Be brief and direct
+    - Use only information from the transcript
+
     Transcript:
-    {transcript}
-    """
+    {transcript}"""
 
 def send_to_perplexity(prompt):
     """Send request to Perplexity API."""
@@ -69,6 +69,21 @@ def save_markdown(markdown_content, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(markdown_content)
 
+def save_as_js(markdown_content, js_filename="note_data.js"):
+    """Save markdown content as a JavaScript file for direct embedding."""
+    # Escape special characters for JavaScript string
+    escaped_content = (markdown_content
+                      .replace('\\', '\\\\')
+                      .replace('`', '\\`')
+                      .replace('${', '\\${'))
+    
+    js_content = f"const noteMarkdown = `{escaped_content}`;\n"
+    
+    with open(js_filename, 'w', encoding='utf-8') as f:
+        f.write(js_content)
+    
+    print(f"✅ Saved JavaScript version: {js_filename}")
+
 def main():
     # Output filename
     output_filename = "note.md"
@@ -88,6 +103,9 @@ def main():
         # Save the markdown file
         save_markdown(markdown_content, output_filename)
         print(f"\n✅ Markdown notes have been created and saved to '{output_filename}'")
+        
+        # Save as JavaScript file for direct embedding
+        save_as_js(markdown_content)
     else:
         print("\n❌ Failed to create markdown notes due to API error")
 
